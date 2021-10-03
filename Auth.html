@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="wwwroot/css/style.css">
+
+  <title>WebChat</title>
+</head>
+
+<body class="auth-page">
+
+  <div class="container">
+
+    <div id="login">
+      <div class="card mb-3 rounded-0 border-0">
+        <img class="card-img-top" src="wwwroot/img/bg-1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">ورود به حساب</h2>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group mt-3">
+              <a onclick="ShowSignin()" href="#">ساخت حساب کاربری</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="Signin">
+      <div class="card mb-3 rounded-0 border-0">
+        <img class="card-img-top" src="wwwroot/img/bg-7.png" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">ایجاد حساب</h2>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group mt-3">
+              <a onclick="Showlogin()" href="#">ورود به حساب کاربریس</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="wwwroot/lib/jquery/dist/jquery.min.js"></script>
+  <script src="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+
+      var hash = window.location.hash;
+
+      if (hash == "" || hash != "#login" && hash != "#signin") {
+        hash = "#login";
+      }
+
+      if (hash.toLowerCase() == "#login") {
+        $("#Signin").slideUp();
+        $("#login").slideDown();
+      } else if (hash.toLowerCase() == "#signin") {
+        $("#login").slideUp();
+      $("#Signin").slideDown();
+      }
+
+    });
+
+    function Showlogin() {
+      $("#Signin").slideUp();
+      $("#login").slideDown();
+    }
+
+    function ShowSignin() {
+      $("#login").slideUp();
+      $("#Signin").slideDown();
+    }
+  </script>
+</body>
+
+</html>
